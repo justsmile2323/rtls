@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=600, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Targets</title>
+    <link rel="stylesheet" href="/css/style.min.css">
+</head>
+<body style="width:600px; margin: auto;">
+<div class="wrapper" id="app">
+    <div>
+        <ul style="margin-top: 30px" v-if="devices.length">
+            <li style="text-align: center; line-height: 1.5">A0-A1: {{ devices[0].a1.y}}</li>
+            <li style="text-align: center; line-height: 1.5">A1-A2: {{ devices[0].a2.x}}</li>
+            <li style="text-align: center; line-height: 1.5" v-for="(item, index) in devices">TAG-{{ index+1 }}: X:{{ item.a4.x}} Y:{{ item.a4.y}}</li>
+        </ul>
+        <button style="margin: auto; margin-top: 30px; padding: 10px; display: block; border: 1px solid black;" @click="clearBase">Clear Base</button>
+        <canvas width="500" height="500" style="border:2px solid black; margin: 30px auto; display:block;transform: scale(1,-1)"></canvas>
+    </div>
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+<script src="//www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+<script src="//unpkg.com/vuefire/dist/vuefire.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
